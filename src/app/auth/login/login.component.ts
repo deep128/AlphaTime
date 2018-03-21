@@ -5,6 +5,7 @@ import { Response } from '@angular/http';
 import { error } from 'selenium-webdriver';
 import { Router } from '@angular/router';
 import { DialogBoxDetail } from '../../ui-component/popup-message/DialogBoxDetail';
+import { Title } from '@angular/platform-browser'
 
 @Component({
   selector: 'app-login',
@@ -15,12 +16,13 @@ export class LoginComponent implements OnInit {
 
   dialogBoxDetail:DialogBoxDetail = new DialogBoxDetail;
 
-  constructor(private authService: AuthService, private router: Router) {
+  constructor(private authService: AuthService, private router: Router, private titleService:Title) {
     if(this.authService.getLoginStatus()) {
       router.navigate(['/home']);
     }
    }
   ngOnInit() {
+    this.titleService.setTitle("Login");
   }
 
   onSignIn(form: NgForm) {
