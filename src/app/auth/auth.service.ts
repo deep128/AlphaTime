@@ -25,14 +25,14 @@ export class AuthService {
    }
 
   signInUser(username: string, password: string):Observable<Response> {
-    const authUrl = this.config.baseAPIUrl + 'api/authservice';
-    const authorization:string = "Basic " + btoa(username + ":" + password);
+    const authUrl = this.config.baseAPIUrl + 'api/login';
     const header = new Headers({
-      'Authorization': authorization,
-      'Content-type' : 'application/json',
-      'withCredentials': 'true'
+      'Content-type' : 'application/json'
     });
-    return this.http.get(authUrl, {headers: header});
+    return this.http.post(authUrl, {
+      username,
+      password
+    }, {headers: header});
   }
 
   setJwtToken(token:string) {
@@ -41,7 +41,9 @@ export class AuthService {
 
   isAuthenticated():Observable<Response> {
       const authUrl = this.config.baseAPIUrl + 'api/authservice/';
-      return this.http.get(authUrl + this.jwtToken);
+      return this.http.post(authUrl, {
+        token:this.jwtToken
+      });
   }
 
   getToken():string {
