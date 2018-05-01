@@ -16,6 +16,7 @@ import {  } from 'crypto-js';
 export class LoginComponent implements OnInit {
 
   dialogBoxDetail:DialogBoxDetail = new DialogBoxDetail;
+
   @ViewChild("f") loginForm: NgForm;
 
   constructor(private authService: AuthService, private router: Router, private titleService:Title) {
@@ -30,12 +31,10 @@ export class LoginComponent implements OnInit {
   onSignIn() {
     const username:string = this.loginForm.value.username;
     const password:string = this.loginForm.value.password;
-    this.authService.signInUser(username,password).subscribe((response:Response) => {
-      let resp = JSON.parse(response.text() + "");
+    this.authService.signInUser(username,password).subscribe((resp) => {
       if(resp.success) {
         let token = resp.token;
         this.authService.login(token);
-        this.authService.setJwtToken(token);
         this.router.navigate(['\home']);
       }
       else {

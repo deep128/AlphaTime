@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { MenubarComponent } from './menubar/menubar.component';
 import { HamburgerComponent } from './ui-component/hamburger/hamburger.component';
 import { UserService } from './user.service';
-import { HttpClient} from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './/app-routing.module';
 import { HomeComponent } from './home/home.component';
@@ -36,12 +35,11 @@ import { Config } from './config.service';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    FormsModule,
-    HttpModule
+    FormsModule
   ],
   providers: [
     UserService,
-    HttpClient,
+    HttpClientModule,
     AuthService,
     Config,
     {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}
