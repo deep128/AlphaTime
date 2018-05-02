@@ -23,8 +23,9 @@ export class MenubarComponent implements OnInit {
 
   getUser(): void {
     this.userService.getCurrUser().subscribe(
-      users=>{
-        this.user = users[0]
+      data=>{
+        this.user = data.user;
+        console.log(data.user);
       },
       (error)=>{
         console.log(error)

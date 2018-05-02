@@ -39,15 +39,6 @@ export class AuthService {
     this.jwtToken = token;
   }
 
-  isAuthenticated():Observable<any> {
-      const authUrl = this.config.baseAPIUrl + 'api/authservice/';
-      return this.http.post(authUrl, {
-        token:this.jwtToken
-      }, {
-        observe: 'response'
-      });
-  }
-
   getToken():string {
     return this.jwtToken;
   }

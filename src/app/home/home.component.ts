@@ -16,17 +16,6 @@ export class HomeComponent implements OnInit {
     }
    }
     
-  ngOnInit() {
-    this.authService.isAuthenticated().subscribe((response)=>{
-      if(response.status != 202) {
-        this.authService.logOut();
-        this.router.navigate(['/login']);
-      } 
-    },
-    (error)=>{
-      alert('Unable to authenticate');
-    } 
-  );
-  }
+  ngOnInit() { }
 
 }

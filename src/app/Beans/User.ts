@@ -3,7 +3,7 @@ export class User {
 	firstName: string;
 	lastName: string;
 	userName: string;
-	gender: boolean;
+	gender: string;
 	profile_pic: string;
 	cover_pic: string;
 	covTop: number;

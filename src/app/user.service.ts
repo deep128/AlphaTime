@@ -13,8 +13,8 @@ export class UserService {
     return this.http.get<User>("");
   }
 
-  getCurrUser(): Observable<User> {
-    return this.http.get<User>(this.config.baseAPIUrl + "api/users/my");
+  getCurrUser(): Observable<any> {
+    return this.http.get<User>(this.config.baseAPIUrl + "users/my");
   }
 
 }
