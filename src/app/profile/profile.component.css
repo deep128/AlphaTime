@@ -1,0 +1,25 @@
+#coverContainer {
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+}
+
+.coverWrapper {
+    width: 100%;
+}
+
+.coverWrapper .coverImage {
+    width: 100%;
+}
+
+#userProfilePicContainer {
+    width: 250px;
+    height: 250px;
+    border: 1px solid #aaa;
+}
+
+#profilePicHolder {
+    padding: 20px;
+    text-align: center;
+    display: inline-block;
+}

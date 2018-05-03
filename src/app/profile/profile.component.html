@@ -1,0 +1,15 @@
+<app-menubar></app-menubar>
+<main>
+  <div id="coverContainer">
+    <div class="coverWrapper"><img class="coverImage" src="{{baseURL}}public/tempCover.jpg" /></div>
+  </div>
+  <div>
+    <div id="profilePicHolder">
+        <div id="userProfilePicContainer">
+
+        </div>
+        <input type="file" (change)="fileEvent($event)" accept=".jpg" class="btn" placeholder="change picture" />
+    </div>
+    
+  </div>
+</main>

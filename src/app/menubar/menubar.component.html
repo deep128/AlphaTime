@@ -1,26 +1,28 @@
 <nav ng-app="menuApp" ng-init="UserName" ng-controller="menuCtrl" class="navbar navbar-expand-sm bg-light">
-  <ul class="navbar-nav">
-    <li *ngFor="let menuItem of allMenuItems" class="nav-item"><a href="{{menuItem.link}}" class="nav-link"><div>{{menuItem.name}}</div></a></li>
-  </ul>
-  <div class="userDrop">
-    <ul class="nav">
-        <li class="nav-item">
-            <div class="dropdown">
-              <button type="button" class="btn btn-primary btn-sm dropdown-toggle align-middle" data-toggle="dropdown"></button>
-              <div class="dropdown-menu">
-                <div class="dropdown-item">Settings</div>
-                <div class="dropdown-item" (click)="logOut()">Log out</div>
-              </div>
-            </div>
-        </li>
-        <li>
-          <div id="userfix">
-            <div id="uf1" class="invt">
-              <label><span style="font-size:16px">{{user?.firstName}}</span><br><span style="font-size:14px">{{user?.lastName}}</span></label>
-            </div>
-          </div>
-        </li>
-    </ul>
+  <div id="menuBar">
+      <ul class="navbar-nav">
+          <li *ngFor="let menuItem of allMenuItems" class="nav-item"><a href="{{menuItem.link}}" class="nav-link"><div>{{menuItem.name}}</div></a></li>
+        </ul>
+        <div class="userDrop">
+          <ul class="nav">
+              <li class="nav-item">
+                  <div class="dropdown">
+                    <button type="button" class="btn btn-primary btn-sm dropdown-toggle align-middle" data-toggle="dropdown"></button>
+                    <div class="dropdown-menu">
+                      <div class="dropdown-item">Settings</div>
+                      <div class="dropdown-item" (click)="logOut()">Log out</div>
+                    </div>
+                  </div>
+              </li>
+              <li>
+                <div id="userfix">
+                  <div id="uf1" class="invt">
+                    <label>{{user?.firstName}}</label>
+                  </div>
+                </div>
+              </li>
+          </ul>
+        </div>
   </div>
 </nav>
 <div id="notifybox" class="scrollbox" ld="no"></div><div id="backcover"></div>

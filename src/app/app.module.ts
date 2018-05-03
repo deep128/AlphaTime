@@ -18,6 +18,7 @@ import { AuthInterceptor } from './Shared/auth.interceptor';
 import { HeaderComponent } from './auth/ui-components/header/header.component';
 import { PopupMessageComponent } from './ui-component/popup-message/popup-message.component';
 import { Config } from './config.service';
+import { ProfileComponent } from './profile/profile.component';
 
 
 
@@ -29,7 +30,8 @@ import { Config } from './config.service';
     HomeComponent,
     LoginComponent,
     HeaderComponent,
-    PopupMessageComponent
+    PopupMessageComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
