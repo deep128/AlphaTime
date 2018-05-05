@@ -1,25 +1,37 @@
-#coverContainer {
-    width: 100%;
-    height: 350px;
+main {
+    min-width: 1072px;
     overflow: hidden;
-}
-
-.coverWrapper {
-    width: 100%;
-}
-
-.coverWrapper .coverImage {
-    width: 100%;
+    margin-top: 50px;
 }
 
 #userProfilePicContainer {
     width: 250px;
     height: 250px;
-    border: 1px solid #aaa;
+    display: inline-block;
+    background-color: white;
+    overflow: hidden;
+    position: relative;
 }
 
-#profilePicHolder {
-    padding: 20px;
-    text-align: center;
-    display: inline-block;
+#userProfilePicContainer img{
+    width:100%;
+}
+
+#userInfoBox {
+    padding: 10px 0px;
+}
+
+.btm-btn {
+    width: 100%;
+    background-color: teal;
+    color: white;
+    position: absolute;
+    bottom: 0px;
+    padding: 5px 0px;
+    display: none;
+    cursor: pointer;
+}
+
+#userProfilePicContainer:hover .btm-btn{
+    display: block;
 }

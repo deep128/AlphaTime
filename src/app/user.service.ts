@@ -9,16 +9,13 @@ export class UserService {
 
   constructor(private http: HttpClient, private config: Config) { }
 
-  getUsers(condition): Observable<any> {
+  getUsersByUserName(usernameList): Observable<any> {
     
     let options = {
-      params: new HttpParams()
+      params: new HttpParams().set("usernameList", JSON.stringify(usernameList))
     }
 
-    condition.forEach(element => {
-      options.params.set(element.column, element.value);
-    });
-    return this.http.get(this.config.baseAPIUrl + "users", options);
+    return this.http.get(this.config.baseAPIUrl + "usersByUsername", options);
   }
 
   getCurrUser(): Observable<any> {

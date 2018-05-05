@@ -7,69 +7,48 @@
     top: 0px;
     left: 0px;
     width: 100%;
-    background-color: white;
+    background-color: #444;
+    padding: 0px 20px;
+    min-width: 1072px;
+
+    display:-ms-flexbox;
+-ms-flex-pack:center;
+-ms-flex-align:center;
+
+/* Firefox */
+display:-moz-box;
+-moz-box-pack:center;
+-moz-box-align:center;
+
+/* Safari, Opera, and Chrome */
+display:-webkit-box;
+-webkit-box-pack:center;
+-webkit-box-align:center;
+
+/* W3C */
+display:box;
+box-pack:center;
+box-align:center;
 }
 
-#progressbar{
-    height:3px;
-    display:inline-block;
-    position:absolute;
-    background-color:#96bf48;
-    transition:width 1s;
-    box-shadow:0 0 5px rgba(0,0,0,.5);
-}
-#progressbox{
-    width:100%;
-    position:fixed;
-    top:50px;
+#menuBar a {
+    color: #eee;
+    font-weight: 300;
 }
 
-
-.userDrop {
-    position: absolute;
-    right: 0px;
-    top:0px;
-    padding-left: 10px;
-    text-align: right;
-    height: 100%;
+.nav-item .nav-link div {
+    padding: 10px 30px;
 }
 
-#uf1{
-    width:100px;
-    text-align:center;
-    height:40px;
-    height: 100%;
-    line-height: 30px;
-}
-#uf2, #uf2 img {
-    width:40px;
-    height:40px;
-}
-#notify{
-    margin:5px;
-    font-size:25px;
-    background-color:#0094ff;
-    color:white;
-    cursor:pointer;
-    padding:4px 7px;
-}
-#notify:hover{
-    background-color:#ed5b49;
-}
-#notifybox{
-    position:fixed;
-    right:10px;
-    top:65px;
-    height:350px;
-    width:400px;
-    background-color:#eee;
-    border-radius:3px;
-    -moz-border-radius: 3px;
-    padding:15px;
-    box-shadow:inset 3px 3px 1px #fd6b59,inset -3px -3px 1px #bd2b09,0 0 10px rgba(0,0,0,.5);
-    display:none;
+.menu div:hover {
+    background-color: #e67e22;
 }
 
 .dropdown-item {
     cursor: pointer;
+}
+
+.dropdown-menu {
+    right: 0;
+    left: auto;
 }

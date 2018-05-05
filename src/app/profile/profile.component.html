@@ -1,15 +1,26 @@
-<app-menubar></app-menubar>
-<main>
-  <div id="coverContainer">
-    <div class="coverWrapper"><img class="coverImage" src="{{baseURL}}public/tempCover.jpg" /></div>
-  </div>
-  <div>
-    <div id="profilePicHolder">
-        <div id="userProfilePicContainer">
-
-        </div>
-        <input type="file" (change)="fileEvent($event)" accept=".jpg" class="btn" placeholder="change picture" />
+<main *ngIf="show">
+  <div *ngIf="!(profileUser == null); else notFoundBlock">
+    <div class="row" id="userInfoBox">
+      <div class="col-3 text-center container">
+          <div id="userProfilePicContainer" class="border border-primary rounded shadow-sm">
+            <img src="{{baseURL}}Images/UsersImages/{{profileUser?.profile_pic}}" alt="Profile Picture" />
+            <div *ngIf="itsMe" class="btm-btn" (click)="changeProfileImageClick()">Change Picture</div>
+          </div>
+          <input
+            *ngIf="itsMe"
+            id="userImageInput"
+            type="file"
+            (change)="fileEvent($event)"
+            accept=".jpg"
+            style="display: none" />
+      </div>
+      <div class="col-9">
+        <h3>{{profileUser?.firstName}} {{profileUser?.lastName}}</h3>
+      </div>
     </div>
-    
   </div>
+  <ng-template #notFoundBlock>
+    <div class="text-center"><h2>Not Found</h2></div>
+  </ng-template>
 </main>
+<app-menubar *ngIf="currUser != null" [user]="currUser"></app-menubar>

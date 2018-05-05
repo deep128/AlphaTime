@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { UserService } from '../user.service';
 import { User } from '../Beans/User';
 import { AuthService } from '../auth/auth.service';
@@ -11,23 +11,13 @@ import { Router } from '@angular/router';
 })
 export class MenubarComponent implements OnInit {
 
-  allMenuItems: MenuItem[] = [{name:'Home',link:'home'},
-    {name:'Profile', link: 'profile'}];
-  
-    user:User;
+  allMenuItems: MenuItem[] = [{name:'Home',link:'home'}];
+    @Input() user:User;
     constructor(private userService: UserService, private authService:AuthService,private router: Router) {
-    this.getUser();
    }
 
-  ngOnInit() { }
-
-  getUser(): void {
-    this.userService.getCurrUser().subscribe(
-      data=>{
-        this.user = data.user;
-      },
-      (error)=>{
-      });
+  ngOnInit() { 
+    this.allMenuItems.splice(1,0,{name:this.user.firstName, link: 'profile/' + this.user.userName});
   }
 
   logOut() {
