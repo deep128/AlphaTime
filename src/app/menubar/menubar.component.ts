@@ -11,7 +11,8 @@ import { Router } from '@angular/router';
 })
 export class MenubarComponent implements OnInit {
 
-  allMenuItems: MenuItem[] = [{name:'Home',link:'home'}];
+  allMenuItems: MenuItem[] = [{name:'Home',link:'home'},
+  {name:'School',link:"school"}];
     @Input() user:User;
     constructor(private userService: UserService, private authService:AuthService,private router: Router) {
    }
