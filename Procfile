@@ -1,1 +1,1 @@
-web: ng serve;
+web: ng serve --port process.env.PORT || 4200;
