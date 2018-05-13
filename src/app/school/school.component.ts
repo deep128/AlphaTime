@@ -14,16 +14,16 @@ import { Title } from '@angular/platform-browser';
 export class SchoolComponent implements OnInit {
 
   public currUser:User;
-  private school:School = null;
-  private show:boolean;
+  public school:School = null;
+  public show:boolean;
 
-  private leftPanelObjects = [
+  public leftPanelObjects = [
     {name: "Classes",component: "app-class-list"},
     {name: "Teachers",component: "teacher"},
     {name: "Students",component: "students"}
 ];
 
-  private selectedComponent:string;
+  public selectedComponent:string;
 
   constructor(private route:ActivatedRoute, private userService:UserService, private schoolService:SchoolService,
   private titleService:Title) {
