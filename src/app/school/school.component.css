@@ -1,0 +1,12 @@
+.left-panel-btn {
+    padding: 20px 0 20px 80px;
+    border-bottom: 1px solid #999;
+    cursor: pointer;
+    background-color: #444;
+}
+.left-panel-btn:hover {
+    background-color: #999;
+}
+.left-panel-btn[selected] {
+    background-color: #666;
+}

@@ -1,0 +1,34 @@
+<main *ngIf="show">
+    <div *ngIf="!(school == null); else notFoundBlock">
+        
+        
+        <div class="bg-primary p-3 mb-2 text-white">
+            <h3 class="align-middle">{{school?.name}}</h3>
+        </div>
+        <div class="row">
+            <div class="col-3 left-panel text-white align-middle">
+                <ng-container *ngFor="let object of leftPanelObjects">
+                    <ng-container *ngIf="(selectedComponent != object.component)">
+                        <ng-container  *ngTemplateOutlet="leftPanelBtn;context:{name: object.name, component: object.component}"></ng-container>
+                    </ng-container>
+                    <ng-container *ngIf="(selectedComponent == object.component)">
+                        <ng-container  *ngTemplateOutlet="leftPanelBtnSelected;context:{name: object.name}"></ng-container>
+                    </ng-container>
+                </ng-container>
+                <ng-template #leftPanelBtn let-name="name" let-component="component">
+                    <div class="left-panel-btn" (click)="onSelectComponent(component)">{{name}}</div>
+                </ng-template>
+                <ng-template #leftPanelBtnSelected let-name="name"><div class="left-panel-btn" selected>{{name}}</div></ng-template>
+            </div>
+            <div class="col-9">
+                <app-class-list></app-class-list>
+            </div>
+        </div>
+    
+    
+    </div>
+    <ng-template #notFoundBlock>
+        <app-notfound></app-notfound>
+    </ng-template>
+</main>
+<app-menubar *ngIf="currUser != null" [user]="currUser"></app-menubar>

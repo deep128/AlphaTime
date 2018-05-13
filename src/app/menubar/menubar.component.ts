@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { UserService } from '../user.service';
 import { User } from '../Beans/User';
 import { AuthService } from '../auth/auth.service';
 import { Router } from '@angular/router';
@@ -14,7 +13,7 @@ export class MenubarComponent implements OnInit {
   allMenuItems: MenuItem[] = [{name:'Home',link:'home'},
   {name:'School',link:"school"}];
     @Input() user:User;
-    constructor(private userService: UserService, private authService:AuthService,private router: Router) {
+    constructor(private authService:AuthService,private router: Router) {
    }
 
   ngOnInit() { 

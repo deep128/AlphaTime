@@ -1,1 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+main {
+    min-width: 1072px;
+    overflow: hidden;
+    margin-top: 50px;
+}

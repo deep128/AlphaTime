@@ -1,9 +1,10 @@
-<nav class="navbar navbar-expand-sm bg-light">
   <div id="menuBar" class="row">
     <div class="col-9">
-      <ul class="navbar-nav menu">
-        <li *ngFor="let menuItem of allMenuItems" class="nav-item"><a href="{{menuItem.link}}" class="nav-link"><div>{{menuItem.name}}</div></a></li>
-      </ul>
+    <div class="row menu">
+        <div *ngFor="let menuItem of allMenuItems" class="col-2">
+          <a href="{{menuItem.link}}" class="nav-link"><div>{{menuItem.name}}</div></a>
+        </div>
+    </div>
     </div>
     <div class="col-3">
       <ul class="nav justify-content-end">
@@ -19,4 +20,27 @@
       </ul>
     </div>
   </div>
-</nav>
+  <!-- <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="#">Navbar</a>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">Disabled</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </nav> -->

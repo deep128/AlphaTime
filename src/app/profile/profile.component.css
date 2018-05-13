@@ -1,9 +1,3 @@
-main {
-    min-width: 1072px;
-    overflow: hidden;
-    margin-top: 50px;
-}
-
 #userProfilePicContainer {
     width: 250px;
     height: 250px;

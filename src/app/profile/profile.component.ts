@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Config } from '../config.service'
+import { Config } from '../services/config.service'
 import { HttpRequest, HttpClient } from '@angular/common/http';
 import { Title } from '@angular/platform-browser';
 import { User } from '../Beans/User';
 import { ActivatedRoute } from '@angular/router';
-import { UserService } from '../user.service';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-profile',

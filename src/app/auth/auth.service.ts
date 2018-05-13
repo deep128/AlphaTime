@@ -3,7 +3,7 @@ import { Observable } from 'rxjs/Observable';
 import { Response } from '@angular/http';
 import { tokenName } from '@angular/compiler';
 import { Router } from '@angular/router';
-import { Config } from '../config.service';
+import { Config } from '../services/config.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable()
