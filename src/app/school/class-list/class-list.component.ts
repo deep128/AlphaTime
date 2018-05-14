@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ClassService } from '../../services/class.service';
+import { Class } from '../../Beans/Class';
 
 @Component({
   selector: 'app-class-list',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClassListComponent implements OnInit {
 
-  constructor() { }
+  @Input() schoolid:number;
+  public classList:Class[];
+  constructor(private classService:ClassService) { }
 
   ngOnInit() {
+
+
   }
 
 }

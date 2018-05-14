@@ -1,3 +1,4 @@
 export class School {
-    name: string
+    id:number;
+    name: string;
 }

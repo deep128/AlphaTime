@@ -21,7 +21,7 @@
                 <ng-template #leftPanelBtnSelected let-name="name"><div class="left-panel-btn" selected>{{name}}</div></ng-template>
             </div>
             <div class="col-9">
-                <app-class-list></app-class-list>
+                <app-class-list *ngIf="selectedComponent == 'app-class-list'" [schoolid]="school.id"></app-class-list>
             </div>
         </div>
     

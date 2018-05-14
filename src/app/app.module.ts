@@ -24,6 +24,7 @@ import { SchoolComponent } from './school/school.component';
 import { SchoolService } from './services/school.service';
 import { NotfoundComponent } from './extra/notfound/notfound.component';
 import { ClassListComponent } from './school/class-list/class-list.component';
+import { ClassService } from './services/class.service';
 
 
 
@@ -53,6 +54,7 @@ import { ClassListComponent } from './school/class-list/class-list.component';
     HttpClientModule,
     AuthService,
     SchoolService,
+    ClassService,
     Config,
     {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}
   ],
