@@ -64,7 +64,6 @@ export class SchoolComponent implements OnInit {
         this.school = new School();
         this.school.name = data.school.name;
         this.school.id = parseInt(data.school.id);
-        console.log(this.school);
         this.titleService.setTitle(this.school.name);
       }
       else {

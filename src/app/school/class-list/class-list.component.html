@@ -1,3 +1,18 @@
-<p>
-  class-list works!
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col-3"><span class="ml-2">Name</span></div>
+    <div class="col-3"><span class="ml-2">Level</span></div>
+    <div class="col-3"><span class="ml-2">Class Teacher</span></div>
+    <div class="col-3 text-right"><span class="mr-5">Options</span></div>
+  </div>
+  <div
+    *ngFor="let class Of classList"
+    class="m-2 row p-2 classbar">
+    <div class="col-4">
+        <span class="ml-3">{{class.name}}</span>
+    </div>
+  </div>
+  <div class="text-center">
+      <button class="btn btn-primary">Add new Class</button>
+  </div>
+</div>

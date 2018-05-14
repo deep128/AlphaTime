@@ -4,6 +4,9 @@ export class Class {
     id:number;
     name:string;
     level:number;
-    classteacher: User;
+    classTeacher: {
+        name:string;
+        username:string;
+    }
     schoolid:number;
 }
