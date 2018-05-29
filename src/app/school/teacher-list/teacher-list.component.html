@@ -1,6 +1,6 @@
 <div class="container">
   <div class="text-right p-3">
-      <button class="btn btn-primary" [disabled]="showAddTeachersBox" (click)="showAddTeachersBox = true">Add Teachers</button>
+      <button class="btn btn-primary" [disabled]="showAddTeacherBox" (click)="showAddTeacherBox = true">Add Teachers</button>
   </div>
   <div class="mr-4 ml-4" *ngIf="showAddTeachersBox">
     <form>
@@ -9,7 +9,7 @@
             <label>Write the comma seperated teachers email list</label>
         </div>
         <div class="col-4">
-            <button type="button" class="close" aria-label="Close" title="Cancle" (click)="showAddTeachersBox=false">
+            <button type="button" class="close" aria-label="Close" title="Cancle" (click)="showAddTeacherBox=false">
               <span aria-hidden="true">&times;</span>
             </button>
         </div>
