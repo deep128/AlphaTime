@@ -25,6 +25,7 @@ import { SchoolService } from './services/school.service';
 import { NotfoundComponent } from './extra/notfound/notfound.component';
 import { ClassListComponent } from './school/class-list/class-list.component';
 import { ClassService } from './services/class.service';
+import { TeacherListComponent } from './school/teacher-list/teacher-list.component';
 
 
 
@@ -41,7 +42,8 @@ import { ClassService } from './services/class.service';
     SignUpComponent,
     SchoolComponent,
     NotfoundComponent,
-    ClassListComponent
+    ClassListComponent,
+    TeacherListComponent
   ],
   imports: [
     BrowserModule,

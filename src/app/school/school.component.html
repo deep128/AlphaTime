@@ -22,6 +22,7 @@
             </div>
             <div class="col-9">
                 <app-class-list *ngIf="selectedComponent == 'app-class-list'" [schoolid]="school.id"></app-class-list>
+                <app-teacher-list *ngIf="selectedComponent == 'app-teacher-list'"></app-teacher-list>
             </div>
         </div>
     

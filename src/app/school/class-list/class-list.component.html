@@ -1,18 +1,58 @@
 <div class="container">
+  <div class="text-right p-3">
+      <button class="btn btn-primary" [disabled]="showAddClass" (click)="showAddClass = true">Add Class</button>
+  </div>
   <div class="row">
     <div class="col-3"><span class="ml-2">Name</span></div>
-    <div class="col-3"><span class="ml-2">Level</span></div>
-    <div class="col-3"><span class="ml-2">Class Teacher</span></div>
+    <div class="col-2"><span class="ml-2">Level</span></div>
+    <div class="col-4"><span class="ml-2">Class Teacher</span></div>
     <div class="col-3 text-right"><span class="mr-5">Options</span></div>
   </div>
+  <ng-container *ngIf="showAddClass">
+      <ng-container *ngTemplateOutlet="addEditClass;context:{name:'',id:'0', level:'1'}"></ng-container>
+  </ng-container>
   <div
     *ngFor="let class Of classList"
     class="m-2 row p-2 classbar">
-    <div class="col-4">
+    <div class="col-3">
         <span class="ml-3">{{class.name}}</span>
     </div>
-  </div>
-  <div class="text-center">
-      <button class="btn btn-primary">Add new Class</button>
+    <div class="col-2">{{class.level}}</div>
+    <div class="col-4">
+      <span *ngIf="(class.classTeacher) != null; else notAssigned"></span>
+      <ng-template #notAssigned><span>Not Assigned</span></ng-template>
+    </div>
   </div>
 </div>
+
+<ng-template #addEditClass let-id="id" let-name="name" let-level="level">
+  <div>
+    <form (ngSubmit)="onSubmitClass(f)" #f="ngForm">
+      <input value="{{id}}" name="id" class="d-none" ngModel>
+      <div class="row align-middle form-group p-2">
+        <div class="col-3">
+          <input
+            type="text"
+            name="name"
+            class="form-control"
+            placeholder="Class Name"
+            value="{{name}}"
+            ngModel
+            required/>
+        </div>
+        <div class="col-2">
+          <select class="form-control" ngModel name="level">
+            <option *ngFor="let i of range(12)" value="{{i}}">{{i}}</option>
+          </select>
+        </div>
+        <div class="col-4"></div>
+        <div class="col-3 text-right">
+          <button type="submit" class="mr-3 btn btn-outline-primary btn-sm">Save</button>
+          <button type="button" class="close mr-3" aria-label="Close" title="Cancle" (click)="showAddClass=false">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>  
+      </div>
+    </form>
+  </div>
+</ng-template>

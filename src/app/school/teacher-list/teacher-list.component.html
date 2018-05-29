@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="text-right p-3">
+      <button class="btn btn-primary" [disabled]="showAddTeachersBox" (click)="showAddTeachersBox = true">Add Teachers</button>
+  </div>
+  <div class="mr-4 ml-4" *ngIf="showAddTeachersBox">
+    <form>
+      <div class="row">
+        <div class="col-8">
+            <label>Write the comma seperated teachers email list</label>
+        </div>
+        <div class="col-4">
+            <button type="button" class="close" aria-label="Close" title="Cancle" (click)="showAddTeachersBox=false">
+              <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    </div>
+        <textarea
+          class="form-control">
+        </textarea>
+        <div class="row p-2">
+          <div class="col-8">
+              <label class="small">An email invite will be sent to these emails to join as teacher of this school</label>
+          </div>
+          <div class="col-4 text-right">
+            <button type="submit" class="btn">Submit</button>
+          </div>
+        </div>
+    </form>
+  </div>
+</div>

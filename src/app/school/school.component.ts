@@ -19,7 +19,7 @@ export class SchoolComponent implements OnInit {
 
   public leftPanelObjects = [
     {name: "Classes",component: "app-class-list"},
-    {name: "Teachers",component: "teacher"},
+    {name: "Teachers",component: "app-teacher-list"},
     {name: "Students",component: "students"}
 ];
 
